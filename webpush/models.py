@@ -8,6 +8,9 @@ from django.conf import settings
 class Group(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
+    def __str__(self):
+        return self.name
+
 
 class SubscriptionInfo(models.Model):
     browser = models.CharField(max_length=100)
@@ -16,11 +19,22 @@ class SubscriptionInfo(models.Model):
     auth = models.CharField(max_length=100)
     p256dh = models.CharField(max_length=100)
 
+    def __str__(self):
+        return f"{self.id} / {self.browser}"
+
 
 class PushInformation(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='webpush_info', blank=True, null=True, on_delete=models.CASCADE)
     subscription = models.ForeignKey(SubscriptionInfo, related_name='webpush_info', on_delete=models.CASCADE)
     group = models.ForeignKey(Group, related_name='webpush_info', blank=True, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        if self.user and self.group:
+            return f"{self.subscription} / {self.user} / {self.group}"
+        elif self.user:
+            return f"{self.subscription} / {self.user}"
+        elif self.group:
+            return f"{self.subscription} // {self.group}"
 
     def save(self, *args, **kwargs):
         # Check whether user or the group field is present
