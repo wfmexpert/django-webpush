@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-24 17:15+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: admin.py:18
+msgid "Test sent successfully"
+msgstr "Тест сообщение успешно отправлен"
+
+#: admin.py:20
+msgid "Deprecated subscription deleted"
+msgstr "Устаревшая подписка удалена"
+
+#: forms.py:10
+msgid "subscribe"
+msgstr "Подписываться"
+
+#: forms.py:11
+msgid "unsubscribe"
+msgstr "Отписаться"
+
+#: models.py:16
+msgid "Group"
+msgstr "Группа подписки"
+
+#: models.py:17
+msgid "Groups"
+msgstr "Группы подписок"
+
+#: models.py:31
+msgid "Subscription info"
+msgstr "Информация о подписке"
+
+#: models.py:32
+msgid "Subscriptions info"
+msgstr "Информация о подписках"
+
+#: models.py:55
+msgid "At least user or group should be present"
+msgstr "По крайней мере, пользователь или группа должны присутствовать"
+
+#: models.py:58
+msgid "Push information"
+msgstr "информация о Push"
+
+#: models.py:59
+msgid "Pushes information"
+msgstr "информация о Push"

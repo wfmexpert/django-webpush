@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.exceptions import FieldError
 from django.conf import settings
+from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
 
@@ -10,6 +11,10 @@ class Group(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = _("Group")
+        verbose_name_plural = _("Groups")
 
 
 class SubscriptionInfo(models.Model):
@@ -21,6 +26,10 @@ class SubscriptionInfo(models.Model):
 
     def __str__(self):
         return f"{self.id} / {self.browser}"
+
+    class Meta:
+        verbose_name = _("Subscription info")
+        verbose_name_plural = _("Subscriptions info")
 
 
 class PushInformation(models.Model):
@@ -43,5 +52,8 @@ class PushInformation(models.Model):
         if self.user or self.group:
             super(PushInformation, self).save(*args, **kwargs)
         else:
-            raise FieldError('At least user or group should be present')
+            raise FieldError(_('At least user or group should be present'))
 
+    class Meta:
+        verbose_name = _("Push information")
+        verbose_name_plural = _("Pushes information")

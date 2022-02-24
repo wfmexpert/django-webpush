@@ -1,11 +1,8 @@
-import arrow
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
-from jinja2 import contextfunction
 
-from jinja2 import nodes
+from jinja2 import contextfunction
 from jinja2.ext import Extension
-from markupsafe import Markup
 
 from webpush.utils import get_templatetag_context
 

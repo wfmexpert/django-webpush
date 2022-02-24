@@ -4,7 +4,7 @@ from django.contrib import admin
 
 from .models import PushInformation
 from .utils import _send_notification
-
+from django.utils.translation import ugettext_lazy as _
 
 class PushInfoAdmin(admin.ModelAdmin):
     list_display = ("__str__", "user", "subscription", "group")
@@ -15,9 +15,9 @@ class PushInfoAdmin(admin.ModelAdmin):
         for device in queryset:
             notification = _send_notification(device.subscription, json.dumps(payload), 0)
             if notification:
-                self.message_user(request, "Test sent successfully")
+                self.message_user(request, _("Test sent successfully"))
             else:
-                self.message_user(request, "Deprecated subscription deleted")
+                self.message_user(request, _("Deprecated subscription deleted"))
 
 
 admin.site.register(PushInformation, PushInfoAdmin)
