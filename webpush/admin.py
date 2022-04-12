@@ -4,7 +4,7 @@ from django.contrib import admin
 
 from .models import PushInformation
 from .utils import _send_notification
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 class PushInfoAdmin(admin.ModelAdmin):
     list_display = ("__str__", "user", "subscription", "group")
