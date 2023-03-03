@@ -1,5 +1,8 @@
 from django import forms
-from django.utils.translation import gettext_lazy as _
+try:
+    from django.utils.translation import gettext as _
+except:
+    from django.utils.translation import gettext_lazy as _
 
 from .models import Group, PushInformation, SubscriptionInfo
 
