@@ -1,7 +1,11 @@
 from django.db import models
 from django.core.exceptions import FieldError
 from django.conf import settings
-from django.utils.translation import gettext_lazy as _
+try:
+    from django.utils.translation import gettext as _
+except:
+    from django.utils.translation import gettext_lazy as _
+
 
 # Create your models here.
 
